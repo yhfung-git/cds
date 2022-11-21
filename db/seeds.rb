@@ -13,7 +13,6 @@ Cd.destroy_all
   cds = Cd.new(
     name: Faker::Movie.title,
     description: Faker::Movie.quote,
-    poster_url: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
     user_id: 1
   )
   cds.save!
