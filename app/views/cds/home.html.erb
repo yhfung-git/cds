@@ -1,5 +1,12 @@
-<% @cds.each do |cd| %>
-<%= cd.name %>
-<%= cd.description %>
-<%= cd.poster_url %>
-<% end %>
+<div class="container">
+  <h1>CD List</h1>
+
+  <%= link_to "new", new_cd_path %>
+  
+  <% @cds.each do |cd| %>
+    <h2><%= cd.name %></h2>
+    <p><%= cd.description %></p>
+    <p><%= cd.poster_url %></p>
+    <%= link_to "Show", cd_path(cd) %>
+  <% end %>
+</div>

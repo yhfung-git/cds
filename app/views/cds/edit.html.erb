@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Edit your CD</h1>
+
+  <%= simple_form_for(@cd) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :poster_url %>
+    <%= f.submit %>
+  <% end %>
+
+  <%= link_to "Homepage", root_path %>
+</div>
