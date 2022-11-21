@@ -6,6 +6,8 @@ ruby "3.1.2"
 # For user signup, signup, signout
 gem "devise"
 
+gem "faker"
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4"
 
