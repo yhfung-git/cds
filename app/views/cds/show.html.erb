@@ -2,7 +2,7 @@
 
   <h1><%= @cd.name %></h1>
   <p><%= @cd.description %></p>
-  <p><%= @cd.poster_url %></p>
+  <%= cl_image_tag @cd.photo.key, height: 300, width: 400, crop: :fill %>
 
 </div>
 

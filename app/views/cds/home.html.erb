@@ -6,7 +6,7 @@
   <% @cds.each do |cd| %>
     <h2><%= cd.name %></h2>
     <p><%= cd.description %></p>
-    <p><%= cd.poster_url %></p>
+    <%= cd.photo.attached? ? (cl_image_tag cd.photo.key, height: 300, width: 400, crop: :fill ) : image_tag(asset_path('doge.png'), height: 300) %>
     <%= link_to "Show", cd_path(cd) %>
   <% end %>
 </div>

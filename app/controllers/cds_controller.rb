@@ -39,7 +39,7 @@ class CdsController < ApplicationController
   private
 
   def cd_params
-    params.require(:cd).permit(:name, :description, :poster_url)
+    params.require(:cd).permit(:name, :description, :photo)
   end
 
   def set_cd
