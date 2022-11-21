@@ -1,11 +1,16 @@
-<div class="container">
-
-  <h1><%= @cd.name %></h1>
-  <p><%= @cd.description %></p>
-  <p><%= @cd.poster_url %></p>
-
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(<%= @cd.poster_url %>);">
+  <div class="cd-container">
+    <h1><%= @cd.name %></h1>
+    <p><strong><%= @cd.description %></strong></p>
+    <%# <%= link_to "Rent your CDs", new_cd_path, class: "btn btn-flat" %>
+    <%= link_to "Edit", edit_cd_path, class: "btn btn-flat" %>
+    <%= link_to "Delete", cd_path(@cd), class: "btn btn-flat", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove #{@cd.name} ?"} %>
+  </div>
 </div>
 
-<%= link_to "Homepage", root_path %>
-<%= link_to "Edit", edit_cd_path %>
-<%= link_to "Delete", cd_path(@cd), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove #{@cd.name} ?"} %>
+<div class="container">
+
+  <%# <%= link_to "Homepage", root_path %>
+  <%# <%= link_to "Edit", edit_cd_path %>
+  <%# <%= link_to "Delete", cd_path(@cd), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove #{@cd.name} ?"} %>
+</div>

@@ -1,12 +1,17 @@
-<div class="container">
-  <h1>Add your CD</h1>
+<%# Banner %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1542012204088-49fc1ae18754?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);">
+  <div class="cd-container">
+    <h1><%= "Rent your CD" %></h1>
+  </div>
+</div>
 
+<%# Form %>
+<div class="container">
   <%= simple_form_for(@cd) do |f| %>
-    <%= f.input :name %>
+    <%= f.input :name, value: "Title" %>
     <%= f.input :description %>
     <%= f.input :poster_url %>
-    <%= f.submit %>
+    <%= f.submit value: "Rent", class: "btn btn-flat" %>
   <% end %>
-
-  <%= link_to "Homepage", root_path %>
+  <%# <%= link_to "Homepage", root_path %>
 </div>
