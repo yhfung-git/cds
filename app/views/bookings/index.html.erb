@@ -1,8 +1,12 @@
 <div class="container">
   <h1>Your Bookings</h1>
+
+  <% booking_number = 1 %>
+  
   <% @bookings.each do |booking| %>
     <div class="card-product-infos">
-      <h2>Booking: <%= booking.id %></h1>
+      <h2>Booking: <%= booking_number %></h2>
+      <% booking_number += 1 %>
       <%= booking.cd.photo.attached? ? (cl_image_tag booking.cd.photo.key, height: 300, width: 400, crop: :fill ) : image_tag(asset_path('doge.png'), height: 300) %>
       <h2><%= booking.cd.name %></h2>
       <p>Desciption: <strong><%= booking.cd.description %></strong></p>
