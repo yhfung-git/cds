@@ -3,9 +3,11 @@
   <h1>Your CDs</h1>
 
   <% @cds.each do |cd| %>
-    <h1><%= cd.name %></h1>
-    <p>Description: <%= cd.description %></p>
-    <%= link_to cd.photo.attached? ? (cl_image_tag cd.photo.key, height: 300, width: 400, crop: :fill ) : image_tag(asset_path('doge.png'), height: 300),cd_path(cd) %>
+    <div>
+      <h1><%= cd.name %></h1>
+      <p>Description: <%= cd.description %></p>
+      <%= link_to cd.photo.attached? ? (cl_image_tag cd.photo.key, height: 300, width: 400, crop: :fill ) : image_tag(asset_path('doge.png'), height: 300), cd_path(cd) %>
+    </div>
   <% end %>
 
 </div>
