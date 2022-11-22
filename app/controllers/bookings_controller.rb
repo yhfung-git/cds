@@ -3,17 +3,20 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = current_user.bookings
+    authorize @bookings
   end
 
   def new
     @cd = Cd.find(params[:cd_id])
     @booking = Booking.new
+    authorize @booking
   end
 
   def create
     @booking = Booking.new(booking_params)
     @booking.cd = Cd.find(params[:cd_id])
     @booking.user = current_user
+    authorize @booking
     if @booking.save!
       redirect_to bookings_path
     else
