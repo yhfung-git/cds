@@ -1,19 +1,28 @@
+<%# Banner %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1513544883384-ef857f11261a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80);">
+  <div class="cd-container">
+    <h1><%= "Your Bookings" %></h1>
+  </div>
+</div>
+
 <div class="container">
-  <h1>Your Bookings</h1>
 
   <% booking_number = 1 %>
-  
+
   <% @bookings.each do |booking| %>
     <div class="card-product-infos">
-      <h2>Booking: <%= booking_number %></h2>
-      <% booking_number += 1 %>
-      <%= booking.cd.photo.attached? ? (cl_image_tag booking.cd.photo.key, height: 300, width: 400, crop: :fill ) : image_tag(asset_path('doge.png'), height: 300) %>
-      <h2><%= booking.cd.name %></h2>
-      <p>Desciption: <strong><%= booking.cd.description %></strong></p>
-      <p>Start time: <strong><%= booking.start_time %></strong></p>
-      <p>End time: <strong><%= booking.end_time %></strong></p>
-      <%= link_to "Edit", edit_booking_path(booking) %>
-      <%= link_to "Delete", booking_path(booking), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove #{booking.id} ?"} %>
+      <div class="card-product">
+        <%= booking.cd.photo.attached? ? (cl_image_tag booking.cd.photo.key, height: 300, width: 400, crop: :fill ) : image_tag(asset_path('doge.png'), height: 300) %>
+          <div class="card-product-infos">
+          <h2><%= booking_number %>. <%= booking.cd.name %></h2>
+            <% booking_number += 1 %>
+            <p>Description: <strong><%= booking.cd.description %></strong></p>
+            <p>Start time: <strong><%= booking.start_time %></strong></p>
+            <p>End time: <strong><%= booking.end_time %></strong></p>
+            <%= link_to "Edit", edit_booking_path(booking), class: "btn btn-ghost" %>
+            <%= link_to "Delete", booking_path(booking), class: "btn btn-ghost", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove #{booking.id} ?"} %>
+          </div>
+        </div>
     </div>
   <% end %>
 
