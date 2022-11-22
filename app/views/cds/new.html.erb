@@ -10,6 +10,7 @@
   <%= simple_form_for(@cd) do |f| %>
     <%= f.input :name, value: "Title" %>
     <%= f.input :description %>
+    <%= f.input :price %>
     <%= f.input :photo, as: :file %>
     <%= f.submit value: "Add", class: "btn btn-flat" %>
   <% end %>

@@ -5,6 +5,7 @@
   </div>
 </div>
 
+<%# List %>
 <div class="container">
 
   <% booking_number = 1 %>
@@ -19,6 +20,7 @@
             <p>Description: <strong><%= booking.cd.description %></strong></p>
             <p>Start time: <strong><%= booking.start_time %></strong></p>
             <p>End time: <strong><%= booking.end_time %></strong></p>
+            <p><strong><%= booking.cd.price %></strong>€</p>
             <%= link_to "Edit", edit_booking_path(booking), class: "btn btn-ghost" %>
             <%= link_to "Delete", booking_path(booking), class: "btn btn-ghost", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove #{booking.id} ?"} %>
           </div>

@@ -11,13 +11,10 @@
 <%# List %>
   <div>
     <% @cds.each do |cd| %>
-      <div class="card-product">
-        <%= cd.photo.attached? ? (cl_image_tag cd.photo.key, height: 300, width: 400, crop: :fill ) : image_tag(asset_path('doge.png'), height: 300) %>
-        <div class="card-product-infos">
-          <h2><%= cd.name %></h2>
-          <p><strong><%= cd.description %></strong></p>
-          <%= link_to "Details", cd_path(cd), class: "text-decoration-none btn btn-ghost" %>
-        </div>
+    <div class="cards" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), <%= cd.photo.attached? ? (cl_image_tag cd.photo.key, height: 300, width: 400, crop: :fill ) : image_tag(asset_path('doge.png'), height: 300) %>">
+      <div class="card-category" >
+        <h2><%= cd.name %></h2>
+        <%= link_to "Details", cd_path(cd), class: "text-decoration-none btn btn-ghost" %>
       </div>
     <% end %>
 </div>
