@@ -12,7 +12,7 @@
   <div>
     <% @cds.each do |cd| %>
       <div class="card-product">
-        <img src="<%= cd.poster_url %>" />
+        <%= cd.photo.attached? ? (cl_image_tag cd.photo.key, height: 300, width: 400, crop: :fill ) : image_tag(asset_path('doge.png'), height: 300) %>
         <div class="card-product-infos">
           <h2><%= cd.name %></h2>
           <p><strong><%= cd.description %></strong></p>

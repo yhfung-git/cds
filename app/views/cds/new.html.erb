@@ -10,7 +10,7 @@
   <%= simple_form_for(@cd) do |f| %>
     <%= f.input :name, value: "Title" %>
     <%= f.input :description %>
-    <%= f.input :poster_url %>
+    <%= f.input :photo, as: :file %>
     <%= f.submit value: "Rent", class: "btn btn-flat" %>
   <% end %>
   <%# <%= link_to "Homepage", root_path %>

@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(<%= @cd.poster_url %>);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(<%= cl_image_path @cd.photo.key %>);">
   <div class="cd-container">
     <h1><%= @cd.name %></h1>
     <p><strong><%= @cd.description %></strong></p>
