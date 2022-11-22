@@ -6,6 +6,10 @@ class CdsController < ApplicationController
     @cds = Cd.all
   end
 
+  def index
+    @cds = Cd.where(user_id: current_user.id)
+  end
+
   def new
     @cd = Cd.new
   end

@@ -7,21 +7,36 @@ class BookingsController < ApplicationController
   end
 
   def new
+    @cd = Cd.find(params[:cd_id])
     @booking = Booking.new
     authorize @booking
   end
 
   def create
-    @cd = Cd.find(params[:cd_id])
     @booking = Booking.new(booking_params)
-    authorize @booking
+    @booking.cd = Cd.find(params[:cd_id])
     @booking.user = current_user
-
+    authorize @booking
     if @booking.save!
       redirect_to bookings_path
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def edit
+    @booking = Booking.find(params[:id])
+  end
+
+  def update
+    @booking = Booking.update(booking_params)
+    redirect_to bookings_path(@booking)
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to bookings_path
   end
 
   private
