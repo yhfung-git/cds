@@ -1,5 +1,5 @@
 class CdsController < ApplicationController
-  skip_before_action :authenticate_user!, only: :home
+  skip_before_action :authenticate_user!, only: %i[home show]
   before_action :set_cd, only: %i[edit update destroy show]
 
   def home
@@ -21,19 +21,23 @@ class CdsController < ApplicationController
   end
 
   def edit
+    authorize @cd
   end
 
   def update
     @cd.update(cd_params)
+    authorize @cd
     redirect_to cd_path(@cd)
   end
 
   def destroy
     @cd.destroy
+    authorize @cd
     redirect_to root_path
   end
 
   def show
+    authorize @cd
   end
 
   private

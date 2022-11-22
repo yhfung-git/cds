@@ -3,15 +3,18 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = current_user.bookings
+    authorize @bookings
   end
 
   def new
     @booking = Booking.new
+    authorize @booking
   end
 
   def create
     @cd = Cd.find(params[:cd_id])
     @booking = Booking.new(booking_params)
+    authorize @booking
     @booking.user = current_user
 
     if @booking.save!
