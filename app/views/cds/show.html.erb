@@ -3,8 +3,12 @@
     <h1><%= @cd.name %></h1>
     <p><strong><%= @cd.description %></strong></p>
     <p><strong><%= @cd.price %></strong>€</p>
-    <%= link_to "Rent", new_cd_booking_path(@cd), class: "btn btn-flat" %>
-    <%= link_to "Edit", edit_cd_path, class: "btn btn-flat" %>
-    <%= link_to "Delete", cd_path(@cd), class: "btn btn-flat", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove #{@cd.name} ?"} %>
+    <% if current_user.nil? || @cd.user_id != current_user.id %>
+      <%= link_to "Rent", new_cd_booking_path(@cd), class: "btn btn-flat" %>
+    <% end %>
+    <% if !current_user.nil? && @cd.user_id == current_user.id %>
+      <%= link_to "Edit", edit_cd_path, class: "btn btn-flat" %>
+      <%= link_to "Delete", cd_path(@cd), class: "btn btn-flat", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove #{@cd.name} ?"} %>
+    <% end %>
   </div>
 </div>
