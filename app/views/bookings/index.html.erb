@@ -1,0 +1,6 @@
+<% @bookings.each do |booking| %>
+  <%= booking.start_time %>
+  <%= booking.end_time %>
+  <%= booking.name %>
+  <%= booking.cd.photo.key %>
+<% end %>

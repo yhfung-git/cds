@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "cds#home"
+
   resources :cds, except: %i[index] do
     resources :bookings, only: %i[new create]
   end
