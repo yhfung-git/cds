@@ -1,13 +1,19 @@
+<%# Banner %>
+<div class="booking-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1631246974502-73131bdaa3cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=390&q=80);">
+    <h1><%= "Your CDs" %></h1>
+</div>
+
+<%# List %>
 <div class="container">
-
-  <h1>Your CDs</h1>
-
-  <% @cds.each do |cd| %>
-    <div>
-      <h1><%= cd.name %></h1>
-      <p>Description: <%= cd.description %></p>
-      <%= link_to cd.photo.attached? ? (cl_image_tag cd.photo.key, height: 300, width: 400, crop: :fill ) : image_tag(asset_path('doge.png'), height: 300), cd_path(cd) %>
+  <div class="container">
+    <div class="cards">
+      <% @cds.each do |cd| %>
+        <%= link_to cd_path(cd), class:"text-decoration-none" do %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cd.photo.attached? ? (cl_image_path cd.photo.key, crop: :fill ) : image_path(asset_path('doge.png')) %>)">
+            <%= cd.name %>
+          </div>
+        <% end %>
+      <% end %>
     </div>
-  <% end %>
-
+  </div>
 </div>
