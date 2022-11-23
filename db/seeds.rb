@@ -13,8 +13,16 @@ Cd.destroy_all
   cds = Cd.new(
     name: Faker::Movie.title,
     description: Faker::Movie.quote,
+    price: Faker::Number.decimal(l_digits: 2),
     user_id: 1
   )
+  cds2 = Cd.new(
+    name: Faker::Movie.title,
+    description: Faker::Movie.quote,
+    price: Faker::Number.decimal(l_digits: 2),
+    user_id: 2
+  )
   cds.save!
+  cds2.save!
 end
 puts "Finished!"

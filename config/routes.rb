@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "cds#home"
-
+  get 'users/:id' => 'users#show', as: :user
   resources :cds do
     resources :bookings, only: %i[new create]
   end
