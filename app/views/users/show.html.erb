@@ -1,9 +1,11 @@
-first name:  <%= @user.first_name %></br>
-last name:  <%= @user.last_name %></br>
-email:  <%= @user.email %> </br>
-phone number:  <%= @user.phone_number %>
-<%= simple_form_for(@user) do |f| %>
-  <%= f.input :photo, as: :file %>
-<% end %>
-
-<%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill %>
+<div class="container">
+  <div class="profile-img">
+    <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "profile-avatar justify-content-center" %>
+  </div>
+  <div>
+    <h1>Last Name: <%= @user.last_name %></h1>
+    <h2>First Name: <%= @user.first_name %></h2>
+    <p>Email: <%= @user.email %></p>
+    <p>Phone Number: <%= @user.phone_number %></p>
+  </div>
+</div>
