@@ -5,13 +5,12 @@
   <%# Form %>
   <div class="container">
     <%= simple_form_for(@cd) do |f| %>
-      <%= f.input :name, :include_blank => true, placeholder: "CD's name" %>
-      <%= f.input :description, :include_blank => true, placeholder: "CD's description" %>
-      <%= f.input :price, :include_blank => true, placeholder: "CD's price" %>
+      <%= f.input :name, placeholder: "Enter the title", label: "CD title" %>
+      <%= f.input :description, placeholder: "Enter the description" %>
+      <%= f.input :price, placeholder: "Enter the price", hint: "NUMBER ONLY", label: "Price(€)" %>
       <%= f.input :photo, as: :file %>
       <%= f.submit value: "Add", class: "btn btn-flat" %>
     <% end %>
-    <%# <%= link_to "Homepage", root_path %>
   </div>
 
 </div>

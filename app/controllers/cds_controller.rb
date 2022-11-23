@@ -20,7 +20,7 @@ class CdsController < ApplicationController
     @cd = Cd.new(cd_params)
     @cd.user = current_user
     authorize @cd
-    if @cd.save!
+    if @cd.save
       redirect_to cd_path(@cd)
     else
       render :new, status: :unprocessable_entity

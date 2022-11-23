@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { sessions: "users/sessions" }
   root to: "cds#home"
-  get 'users/:id' => 'users#show', as: :user
+  devise_scope :user do
+     get 'users' => 'users/registrations#show', as: :user
+  end
   resources :cds do
     resources :bookings, only: %i[new create]
   end
