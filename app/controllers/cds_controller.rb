@@ -8,6 +8,7 @@ class CdsController < ApplicationController
 
   def index
     @cds = Cd.where(user_id: current_user.id)
+    authorize @cds
   end
 
   def new
