@@ -2,3 +2,8 @@ first name:  <%= @user.first_name %></br>
 last name:  <%= @user.last_name %></br>
 email:  <%= @user.email %> </br>
 phone number:  <%= @user.phone_number %>
+<%= simple_form_for(@user) do |f| %>
+  <%= f.input :photo, as: :file %>
+<% end %>
+
+<%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill %>
