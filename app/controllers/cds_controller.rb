@@ -13,11 +13,13 @@ class CdsController < ApplicationController
 
   def new
     @cd = Cd.new
+    authorize @cd
   end
 
   def create
     @cd = Cd.new(cd_params)
     @cd.user = current_user
+    authorize @cd
     if @cd.save!
       redirect_to cd_path(@cd)
     else
