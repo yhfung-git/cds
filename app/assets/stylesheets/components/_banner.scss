@@ -1,9 +1,36 @@
+// Home
+.home-banner {
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 150px 0;
+  margin-bottom: 20px;
+}
+
+.home-banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 100px;
+  font-weight: bold;
+}
+
+.home-banner p {
+  font-size: 25px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  margin-bottom: 30px;
+}
+
+// Add CD
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
-  text-align: center;
+  padding: 50px 0;
+  text-align: left;
   margin-bottom: 20px;
+  padding-top: 30px;
 }
 
 .banner h1 {
@@ -12,9 +39,62 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
   font-size: 32px;
   font-weight: bold;
+  text-align: center;
+  padding-bottom: 20px;
 }
 
 .banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .9;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+// Show CD
+.show-banner {
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 150px 0;
+  margin-bottom: 20px;
+}
+
+.show-banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 100px;
+  font-weight: bold;
+}
+
+.show-banner p {
+  font-size: 25px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  margin-bottom: 20px;
+}
+
+// Booking Index
+.booking-banner {
+  background-size: cover;
+  background-position: center;
+  padding: 50px 0;
+  text-align: left;
+  margin-bottom: 20px;
+  padding-top: 50px;
+}
+
+.booking-banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.booking-banner p {
   font-size: 20px;
   color: white;
   opacity: .9;
