@@ -17,8 +17,8 @@ class BookingsController < ApplicationController
     @booking.cd = Cd.find(params[:cd_id])
     @booking.user = current_user
     authorize @booking
-    if @booking.save!
-      redirect_to bookings_path
+    if @booking.save
+      redirect_to bookings_path(@booking)
     else
       render :new, status: :unprocessable_entity
     end
@@ -32,7 +32,7 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.update(booking_params)
     authorize @booking
-    redirect_to bookings_path(@booking)
+    redirect_to bookings_path
   end
 
   def destroy

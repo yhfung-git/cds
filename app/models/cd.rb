@@ -3,5 +3,6 @@ class Cd < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_one_attached :photo
 
-  validates :name, :description, :price, presence: true
+  validates :name, :description, presence: true
+  validates :price, presence: true, numericality: { only_integer: true, greater_then: 1 }
 end
