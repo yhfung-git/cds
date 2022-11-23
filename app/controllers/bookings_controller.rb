@@ -30,9 +30,10 @@ class BookingsController < ApplicationController
   end
 
   def update
-    @booking = Booking.update(booking_params)
-    authorize @booking
+    @booking = Booking.find(params[:id])
+    @booking.update(booking_params)
     redirect_to bookings_path
+    authorize @booking
   end
 
   def destroy
