@@ -10,8 +10,20 @@ class BookingPolicy < ApplicationPolicy
     true
   end
 
+  def new?
+    true
+  end
+
+  def edit?
+    user.booking_ids.include?(record.id) ? true : false
+  end
+
   def create?
     record.user == user ? true : false
   end
   
+  def destroy?
+    record.user == user ? true : false
+  end
+
 end
