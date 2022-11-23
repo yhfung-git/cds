@@ -1,18 +1,19 @@
 <%# Banner %>
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1542012204088-49fc1ae18754?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);">
-  <div class="cd-container">
-    <h1><%= "Add your CD" %></h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(https://images.unsplash.com/photo-1554189097-ffe88e998a2b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80);">
+  <h1><%= "Add your CD" %></h1>
+
+  <%# Form %>
+  <div class="container">
+    <%= simple_form_for(@cd) do |f| %>
+      <%= f.input :name, :include_blank => true, placeholder: "CD's name" %>
+      <%= f.input :description, :include_blank => true, placeholder: "CD's description" %>
+      <%= f.input :price, :include_blank => true, placeholder: "CD's price" %>
+      <%= f.input :photo, as: :file %>
+      <%= f.submit value: "Add", class: "btn btn-flat" %>
+    <% end %>
+    <%# <%= link_to "Homepage", root_path %>
   </div>
+
 </div>
 
-<%# Form %>
-<div class="container">
-  <%= simple_form_for(@cd) do |f| %>
-    <%= f.input :name, value: "Title" %>
-    <%= f.input :description %>
-    <%= f.input :price %>
-    <%= f.input :photo, as: :file %>
-    <%= f.submit value: "Add", class: "btn btn-flat" %>
-  <% end %>
-  <%# <%= link_to "Homepage", root_path %>
-</div>
+<%= render "shared/footer" %>

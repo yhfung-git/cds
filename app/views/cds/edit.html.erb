@@ -1,7 +1,7 @@
 <%# Banner %>
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1533090161767-e6ffed986c88?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80);">
   <h1>Edit your CD</h1>
-  
+
   <%# Form %>
   <div class="container">
     <%= simple_form_for(@cd) do |f| %>
@@ -14,3 +14,5 @@
     <% end %>
   </div>
 </div>
+
+<%= render "shared/footer" %>

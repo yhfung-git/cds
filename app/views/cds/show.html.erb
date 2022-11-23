@@ -1,4 +1,4 @@
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(<%= @cd.photo.attached? ? cl_image_path(@cd.photo.key) : asset_path('doge.png') %>);">
+<div class="show-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @cd.photo.attached? ? cl_image_path(@cd.photo.key) : asset_path('doge.png') %>);">
   <div class="cd-container">
     <h1><%= @cd.name %></h1>
     <p><strong><%= @cd.description %></strong></p>
@@ -12,3 +12,5 @@
     <% end %>
   </div>
 </div>
+
+<%= render "shared/footer" %>
