@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Cds</title>
+    <link rel="icon" href="<%= image_path 'favicon-16x16.png' %>" type="image/png" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,10 +12,11 @@
   </head>
 
   <body>
-    <%= render "shared/navbar" %>
-    <%= render "shared/flashes" %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+      <%= render "shared/navbar" %>
+      <%= render "shared/flashes" %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+    <%= render "shared/footer" %>
   </body>
 </html>

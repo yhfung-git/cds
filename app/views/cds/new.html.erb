@@ -1,17 +1,16 @@
 <%# Banner %>
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1542012204088-49fc1ae18754?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);">
-  <div class="cd-container">
-    <h1><%= "Add your CD" %></h1>
-  </div>
-</div>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url(https://images.unsplash.com/photo-1554189097-ffe88e998a2b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80);">
+  <h1 style="text-transform:uppercase;">Add your CD</h1>
 
-<%# Form %>
-<div class="container">
-  <%= simple_form_for(@cd) do |f| %>
-    <%= f.input :name, value: "Title" %>
-    <%= f.input :description %>
-    <%= f.input :photo, as: :file %>
-    <%= f.submit value: "Add", class: "btn btn-flat" %>
-  <% end %>
-  <%# <%= link_to "Homepage", root_path %>
+  <%# Form %>
+  <div class="container">
+    <%= simple_form_for(@cd) do |f| %>
+      <%= f.input :name, placeholder: "Enter the title", label: "CD title" %>
+      <%= f.input :description, placeholder: "Enter the description" %>
+      <%= f.input :price, placeholder: "Enter the price", hint: "NUMBER ONLY", label: "Price(€)" %>
+      <%= f.input :photo, as: :file %>
+      <%= f.submit value: "Add", class: "btn btn-flat" %>
+    <% end %>
+  </div>
+
 </div>

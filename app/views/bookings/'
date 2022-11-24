@@ -1,0 +1,7 @@
+  <% x=1%>
+<% @bookings.each do |booking| %>
+  <%= x %>
+  <% x + 1%>
+  <%= booking.start_time %>
+  <%= booking.end_time %>
+<% end %>
