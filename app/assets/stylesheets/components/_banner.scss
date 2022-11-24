@@ -29,19 +29,21 @@
   font-size: 60px;
   text-transform: uppercase;
   letter-spacing: 2px;
-  background: linear-gradient( #55C2DA, #55C2DA, #55C2DA);
+  background: linear-gradient(90deg, #59C1BD, #A0E4CB, #68daf3);
+  background-color: #68daf38a;
   background-repeat: no-repeat;
-  background-size: 80%;
-  animation: animate 5s;
+  animation: animate 3s linear;
   -webkit-background-clip: text;
   -webkit-text-fill-color: rgba(255, 255, 255, 0);
 }
 @keyframes animate {
   0% {
     background-position: -500%;
+    background-size: 60%
   }
   100% {
     background-position: 500%;
+    background-size: 80%;
   }
 }
 
