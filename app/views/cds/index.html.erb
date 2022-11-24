@@ -9,7 +9,7 @@
     <div class="cards">
       <% @cds.each do |cd| %>
         <%= link_to cd_path(cd), class:"text-decoration-none" do %>
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cd.photo.attached? ? (cl_image_path cd.photo.key, crop: :fill ) : image_path(asset_path('doge.png')) %>)">
+          <div class="card-category spinhov" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cd.photo.attached? ? (cl_image_path cd.photo.key, crop: :fill ) : image_path(asset_path('doge.png')) %>)">
             <%= cd.name %>
           </div>
         <% end %>
