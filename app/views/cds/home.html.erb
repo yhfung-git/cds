@@ -1,10 +1,10 @@
 <%# Banner %>
-<div class="home-banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1530288782965-fbad40327074?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);">
-  <div class="cd-container">
+<div class="home-banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1604147706283-d7119b5b822c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80);">
+  <div class="cd-container shinning">
     <h1>CD</h1>
-    <p><strong>Search your heart, search your soul, and search your CD</strong></p>
-    <%= link_to "Add your CDs", new_cd_path, class: "btn btn-flat" %>
+    <p class="shinning"><strong>Search your heart, search your soul, and search your CD</strong></p>
   </div>
+      <%= link_to "Add your CDs", new_cd_path, class: "btn btn-flat" %>
 </div>
 
 <%# List %>
@@ -12,7 +12,7 @@
   <div class="cards">
     <% @cds.each do |cd| %>
       <%= link_to cd_path(cd), class:"text-decoration-none" do %>
-        <div class="card-category spinhov" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cd.photo.attached? ? (cl_image_path cd.photo.key, crop: :fill ) : image_path(asset_path('doge.png')) %>)">
+        <div class="card-category spinhov" style="spinhov, background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cd.photo.attached? ? (cl_image_path cd.photo.key, crop: :fill ) : image_path(asset_path('doge.png')) %>)">
           <%= cd.name %>
         </div>
       <% end %>
