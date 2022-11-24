@@ -5,10 +5,10 @@ class CdsController < ApplicationController
   def home
     #@cds = Cd.all
     if params[:query]
-      @cds = Cd.where(available: true)
+      @cds = Cd.all
       @cds = @cds.search_by_name_and_description(params[:query])
     else
-      @cds = Cd.where(available: true)
+      @cds = Cd.all
     end
   end
 

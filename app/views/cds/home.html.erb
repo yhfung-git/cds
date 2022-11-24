@@ -11,11 +11,13 @@
   <%# List %>
   <div class="cards">
     <% @cds.each do |cd| %>
-      <%= link_to cd_path(cd), class:"text-decoration-none" do %>
-        <div class="card-category">
-          <%= cd.photo.attached? ? (cl_image_tag cd.photo.key, crop: :fill, class: "spinhov" ) : image_tag(asset_path('doge.png'),  class:"spinhov") %>
-          <p><%= cd.name %></p>
-        </div>
+      <% if cd.booking_ids.empty? %>
+        <%= link_to cd_path(cd), class:"text-decoration-none" do %>
+          <div class="card-category">
+            <%= cd.photo.attached? ? (cl_image_tag cd.photo.key, crop: :fill, class: "spinhov" ) : image_tag(asset_path('doge.png'),  class:"spinhov") %>
+            <p><%= cd.name %></p>
+          </div>
+        <% end %>
       <% end %>
     <% end %>
   </div>
