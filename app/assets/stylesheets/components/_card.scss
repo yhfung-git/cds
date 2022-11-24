@@ -6,8 +6,10 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  margin: 20px;
-  width: 500px;
+  margin: 10px;
+  width: 40%;
+  border-radius: 4px;
+  margin-right: 20px;
 }
 
 .card-product img {
@@ -50,9 +52,9 @@
 // Card Category
 .card-category {
   position: relative;
-  height: 360px;
-  width: 360px;
-  color: white;
+  height: 358px;
+  width: 358px;
+  color: #55c2da;
   font-size: 30px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
@@ -62,27 +64,40 @@
   transition: 1s box-shadow;
 }
 
+.card-category p {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
 .card-category:hover {
   box-shadow: 0 5px 35px 0px rgba(0,0,0,.1);
+  opacity: 1;
 }
 
 .card-category:hover::before, .card-category:hover::after {
   display: block;
   content: '';
   position: absolute;
-  width: 360px;
-  height: 360px;
-  background: #FDA8CF;
+  width: 359px;
+  height: 359px;
+  background: #fa68ac;
   border-radius: 50%;
   z-index: -1;
   animation: 1s clockwise infinite;
 }
 
 .card-category:hover:after {
-  background: #F3CE5E;
-  animation: 2s counterclockwise infinite;
+  background: #88e5c3;
+  animation: 3s counterclockwise infinite;
 }
 
+// border spinning
 @keyframes clockwise {
   0% {
     top: -5px;
@@ -161,12 +176,21 @@
   }
 }
 
+// spinning hover
 @keyframes spinning {
   from { transform: rotate(0deg) }
   to { transform: rotate(360deg) }
 }
 
 .spinhov:hover {
+  animation-name: spinning;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  /* linear | ease | ease-in | ease-out | ease-in-out */
+  animation-timing-function: linear;
+}
+
+.spin {
   animation-name: spinning;
   animation-duration: 4s;
   animation-iteration-count: infinite;

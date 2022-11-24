@@ -5,11 +5,9 @@
 
 <%# List %>
 <div class="container">
-
-  <% booking_number = 1 %>
-
-  <% @bookings.each do |booking| %>
-    <div class="card-product-infos">
+  <div class="list-container">
+    <% booking_number = 1 %>
+    <% @bookings.each do |booking| %>
       <div class="card-product">
         <%= booking.cd.photo.attached? ? (cl_image_tag booking.cd.photo.key, height: 300, width: 400, crop: :fill ) : image_tag(asset_path('doge.png'), height: 300) %>
           <div class="card-product-infos">
@@ -21,9 +19,8 @@
             <p><strong><%= booking.cd.price %></strong>€</p>
             <%= link_to "Edit", edit_booking_path(booking), class: "btn btn-ghost" %>
             <%= link_to "Delete", booking_path(booking), class: "btn btn-ghost", data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to remove #{booking.cd.name} ?"} %>
-          </div>
         </div>
-    </div>
-  <% end %>
-
+      </div>
+    <% end %>
+  </div>
 </div>
