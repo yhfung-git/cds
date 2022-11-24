@@ -16,6 +16,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.cd = Cd.find(params[:cd_id])
     @booking.user = current_user
+    @booking.available = false
     authorize @booking
     if @booking.save
       redirect_to bookings_path(@booking)
@@ -39,6 +40,7 @@ class BookingsController < ApplicationController
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
+    @booking.cd.available = true
     authorize @booking
     redirect_to bookings_path
   end

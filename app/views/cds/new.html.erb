@@ -7,6 +7,7 @@
     <%= simple_form_for(@cd) do |f| %>
       <%= f.input :name, placeholder: "Enter the title", label: "CD title" %>
       <%= f.input :description, placeholder: "Enter the description" %>
+      <%= f.input :category, collection: Cd::GENRES %>
       <%= f.input :price, placeholder: "Enter the price", hint: "NUMBER ONLY", label: "Price(€)" %>
       <%= f.input :photo, as: :file %>
       <%= f.submit value: "Add", class: "btn btn-flat" %>
