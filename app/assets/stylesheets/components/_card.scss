@@ -41,16 +41,14 @@
 }
 
 .card-category p {
-  position: absolute;
-  top: 45%;
-  left: 40%;
+    position: absolute;  
+    left: 50%;                        /* horizontal alignment */
+    top: 50%;                         /* vertical alignment */
+    transform: translate(-50%, -50%); /* precise centering; see link below */
 }
 
 // Card Category
 .card-category {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
   height: 360px;
   width: 360px;
