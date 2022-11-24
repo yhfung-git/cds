@@ -33,15 +33,24 @@
   padding: 16px;
 }
 
+.card-category img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.card-category p {
+  position: absolute;
+  top: 45%;
+  left: 40%;
+}
+
 // Card Category
 .card-category {
-  background-size: cover;
-  background-position: center;
+  position: relative;
   height: 360px;
   width: 360px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color: white;
   font-size: 30px;
   font-weight: bold;
@@ -59,6 +68,7 @@
   from { transform: rotate(0deg) }
   to { transform: rotate(360deg) }
 }
+
 .spinhov:hover {
   animation-name: spinning;
   animation-duration: 4s;
