@@ -1,11 +1,10 @@
 <%# Banner %>
-<div class="booking-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1631246974502-73131bdaa3cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=390&q=80);">
-    <h1 style="text-transform:uppercase;">Your CDs</h1>
+<div class="booking-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1620207418302-439b387441b0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=967&q=80);">
+  <h1 style="text-transform:uppercase;">Your CDs</h1>
 </div>
 
 <%# List %>
 <div class="container">
-
     <div class="cards">
       <% @cds.each do |cd| %>
           <%= link_to cd_path(cd), class:"text-decoration-none" do %>
@@ -16,5 +15,4 @@
           <% end %>
       <% end %>
     </div>
-
 </div>
