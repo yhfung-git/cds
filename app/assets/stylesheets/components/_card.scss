@@ -33,15 +33,25 @@
   padding: 16px;
 }
 
+.card-category img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.card-category p {
+    position: absolute;  
+    left: 50%;                        /* horizontal alignment */
+    top: 50%;                         /* vertical alignment */
+    transform: translate(-50%, -50%); /* precise centering; see link below */
+}
+
 // Card Category
 .card-category {
-  background-size: cover;
-  background-position: center;
+  position: relative;
   height: 360px;
   width: 360px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   color: white;
   font-size: 30px;
   font-weight: bold;
@@ -49,17 +59,118 @@
   border-radius: 50%;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   opacity: .8;
+  transition: 1s box-shadow;
 }
 
 .card-category:hover {
-  opacity: 1;
-  border: 5px solid #98d5f4;
+  box-shadow: 0 5px 35px 0px rgba(0,0,0,.1);
 }
+
+.card-category:hover::before, .card-category:hover::after {
+  display: block;
+  content: '';
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  background: #FDA8CF;
+  border-radius: 50%;
+  z-index: -1;
+  animation: 1s clockwise infinite;
+}
+
+.card-category:hover:after {
+  background: #F3CE5E;
+  animation: 2s counterclockwise infinite;
+}
+
+@keyframes clockwise {
+  0% {
+    top: -5px;
+    left: 0;
+  }
+  12% {
+    top: -2px;
+    left: 2px;
+  }
+  25% {
+    top: 0;
+    left: 5px;    
+  }
+  37% {
+    top: 2px;
+    left: 2px;
+  }
+  50% {
+    top: 5px;
+    left: 0;    
+  }
+  62% {
+    top: 2px;
+    left: -2px;
+  }
+  75% {
+    top: 0;
+    left: -5px;
+  }
+  87% {
+    top: -2px;
+    left: -2px;
+  }
+  100% {
+    top: -5px;
+    left: 0;    
+  }
+}
+
+@keyframes counterclockwise {
+  0% {
+    top: -5px;
+    right: 0;
+  }
+  12% {
+    top: -2px;
+    right: 2px;
+  }
+  25% {
+    top: 0;
+    right: 5px;    
+  }
+  37% {
+    top: 2px;
+    right: 2px;
+  }
+  50% {
+    top: 5px;
+    right: 0;    
+  }
+  62% {
+    top: 2px;
+    right: -2px;
+  }
+  75% {
+    top: 0;
+    right: -5px;
+  }
+  87% {
+    top: -2px;
+    right: -2px;
+  }
+  100% {
+    top: -5px;
+    right: 0;    
+  }
+}
+
+//.card-category:hover {
+//  opacity: 1;
+//  border: 5px solid #98d5f4;
+//}
 
 @keyframes spinning {
   from { transform: rotate(0deg) }
   to { transform: rotate(360deg) }
 }
+
 .spinhov:hover {
   animation-name: spinning;
   animation-duration: 4s;
