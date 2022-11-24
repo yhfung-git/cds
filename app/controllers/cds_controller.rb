@@ -5,7 +5,8 @@ class CdsController < ApplicationController
   def home
     #@cds = Cd.all
     if params[:query]
-      @cds = Cd.search_by_name_and_description(params[:query])
+      @cds = Cd.all
+      @cds = @cds.search_by_name_and_description(params[:query])
     else
       #@cds = Cd.all
       @cds = Cd.all unless Cd @booking.cd = Cd.find(params[:cd_id])
@@ -56,7 +57,7 @@ class CdsController < ApplicationController
   private
 
   def cd_params
-    params.require(:cd).permit(:name, :description, :photo, :price)
+    params.require(:cd).permit(:name, :description, :category, :photo, :price)
   end
 
   def set_cd

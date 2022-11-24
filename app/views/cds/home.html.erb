@@ -7,26 +7,17 @@
       <%= link_to "Add your CDs", new_cd_path, class: "btn btn-flat" %>
 </div>
 
-<%# Search %>
-<div> <%= form_with url: root_path, method: :get, class: "d-flex" do %>
-    <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find your inspiration"
-      %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
-</div>
-
-<%# List %>
 <div class="container">
+  <%# List %>
   <div class="cards">
     <% @cds.each do |cd| %>
-      <%= link_to cd_path(cd), class:"text-decoration-none" do %>
-        <div class="card-category">
-          <%= cd.photo.attached? ? (cl_image_tag cd.photo.key, crop: :fill, class: "spinhov" ) : image_tag(asset_path('doge.png'),  class:"spinhov") %>
-          <p><%= cd.name %></p>
-        </div>
+      <% if cd.booking_ids.empty? %>
+        <%= link_to cd_path(cd), class:"text-decoration-none" do %>
+          <div class="card-category">
+            <%= cd.photo.attached? ? (cl_image_tag cd.photo.key, crop: :fill, class: "spinhov" ) : image_tag(asset_path('doge.png'),  class:"spinhov") %>
+            <p><%= cd.name %></p>
+          </div>
+        <% end %>
       <% end %>
     <% end %>
   </div>
