@@ -1,7 +1,7 @@
 <%# Banner %>
 <div class="home-banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1516557070061-c3d1653fa646?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGJsYWNrfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60);">
   <div class="cd-container shinning">
-    <h1>CD</h1>
+    <h1 class="shinning">CD</h1>
     <p class="shinning"><strong>Search your heart, search your soul, and search your CD</strong></p>
   </div>
       <%= link_to "Add your CDs", new_cd_path, class: "btn btn-flat" %>
@@ -13,8 +13,8 @@
     <% @cds.each do |cd| %>
       <%= link_to cd_path(cd), class:"text-decoration-none" do %>
         <div class="card-category">
-          <%= cd.photo.attached? ? (cl_image_tag cd.photo.key, crop: :fill, class: "spinhov" ) : image_tag(asset_path('doge.png')) %>
-          <p><%= cd.name %></p>
+          <%= cd.photo.attached? ? (cl_image_tag cd.photo.key, crop: :fill, class: "spinhov" ) : image_tag(asset_path('doge.png'),  class:"spinhov") %>
+          <%= cd.name %>
         </div>
       <% end %>
     <% end %>

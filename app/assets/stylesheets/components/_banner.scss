@@ -91,12 +91,24 @@
   font-weight: bold;
 }
 
+.show-banner h3 {
+  font-size: 25px;
+  color: white;
+  opacity: .8;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  margin-bottom: 0;
+}
+
 .show-banner p {
   font-size: 25px;
   color: white;
-  opacity: .7;
+  opacity: .8;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   margin-bottom: 20px;
+}
+
+.cd-container {
+  background-color: rgba(185, 198, 204, 0.3);
 }
 
 // Booking Index
