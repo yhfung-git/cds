@@ -7,7 +7,8 @@ class CdsController < ApplicationController
     if params[:query]
       @cds = Cd.search_by_name_and_description(params[:query])
     else
-      @cds = Cd.all
+      #@cds = Cd.all
+      @cds = Cd.all unless Cd @booking.cd = Cd.find(params[:cd_id])
     end
   end
 
