@@ -1,6 +1,6 @@
 <div class="show-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @cd.photo.attached? ? cl_image_path(@cd.photo.key) : asset_path('doge.png') %>);">
   <div class="cd-container">
-    <h1><%= @cd.name %></h1>
+    <h1 style="text-transform:uppercase;" ><%= @cd.name %></h1>
     <p><strong><%= @cd.description %></strong></p>
     <p><strong><%= @cd.price %></strong>€</p>
     <% if current_user.nil? || @cd.user_id != current_user.id %>
