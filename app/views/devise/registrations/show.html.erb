@@ -1,12 +1,12 @@
-<div class="container">
+<div class="container d-flex flex-column align-items-center justify-content-around vh-100">
   <div class="profile-img">
-    <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "profile-avatar justify-content-center" %>
+    <%= @user.photo.attached? ? (cl_image_tag @user.photo.key, crop: :fill, class: "profile-avatar") : image_tag(asset_path('https://kitt.lewagon.com/placeholder/users/ssaunier'), class: "profile-avatar justify-content-center") %>
   </div>
   <div>
     <h1>Last Name: <%= @user.last_name %></h1>
     <h2>First Name: <%= @user.first_name %></h2>
     <p>Email: <%= @user.email %></p>
     <p>Phone Number: <%= @user.phone_number %></p>
-    <%# <%= cl_image_tag @user.photo.key, height: 300, width: 400, crop: :fill %>
   </div>
+  <%= link_to "edit", edit_user_registration_path %>
 </div>
