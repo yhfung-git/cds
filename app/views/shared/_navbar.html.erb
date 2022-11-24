@@ -11,10 +11,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <div>
-          <h3><%=current_user.first_name%></h3>
-          <h2><%=current_user.last_name%></h2>
-          </div>
+          <span>hello, <%=current_user.first_name%></span>
           <li class="nav-item active">
             <%= link_to "", "#", class: "nav-link" %>
           </li>

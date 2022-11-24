@@ -3,7 +3,9 @@
     <div class= "cd-container">
       <h1 style="text-transform:uppercase;" ><%= @cd.name %></h1>
       <h3><strong><%= @cd.description %></strong></h3>
+      <h4><strong><%= @cd.category %></strong></h4>
       <p><strong><%= @cd.price %></strong>€</p>
+
       <% if current_user.nil? || @cd.user_id != current_user.id %>
         <%= link_to "Rent", new_cd_booking_path(@cd), class: "btn btn-flat" %>
       <% end %>
