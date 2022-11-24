@@ -3,7 +3,12 @@ class CdsController < ApplicationController
   before_action :set_cd, only: %i[edit update destroy show]
 
   def home
-    @cds = Cd.all
+    #@cds = Cd.all
+    if params[:query]
+      @cds = Cd.search_by_name_and_description(params[:query])
+    else
+      @cds = Cd.all
+    end
   end
 
   def index
