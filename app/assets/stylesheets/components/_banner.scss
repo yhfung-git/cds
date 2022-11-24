@@ -91,39 +91,49 @@
 }
 
 .show-banner h3 {
-  font-size: 25px;
   color: white;
   opacity: .8;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   margin-bottom: 0;
 }
 
-.show-banner p {
-  font-size: 25px;
+.show-banner h4 {
   color: white;
   opacity: .8;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   margin-bottom: 20px;
 }
 
-.cd-container {
-  background-color: rgba(185, 198, 204, 0.3);
-}
-
 // Booking Index
 .booking-banner {
   background-size: cover;
   background-position: center;
-  padding: 50px 0;
-  text-align: left;
-  padding-top: 50px;
+  padding: 223px 0;
+  margin-bottom: 20px;
 }
 
 .booking-banner h1 {
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-  font-size: 35px;
+  font-size: 70px;
+  font-weight: bold;
+  text-align: center;
+}
+
+// Booking Edit
+.book-edit-banner {
+  background-size: cover;
+  background-position: center;
+  padding-bottom: 212px;
+  padding-top: 30px;
+}
+
+.book-edit-banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+  font-size: 32px;
   font-weight: bold;
   text-align: center;
 }

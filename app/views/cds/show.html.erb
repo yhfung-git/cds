@@ -1,10 +1,10 @@
-<div class="show-banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @cd.photo.attached? ? cl_image_path(@cd.photo.key) : asset_path('doge.png') %>);">
+<div class="show-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(<%= @cd.photo.attached? ? cl_image_path(@cd.photo.key) : asset_path('doge.png') %>);">
   <div class="container">
     <div class= "cd-container">
       <h1 style="text-transform:uppercase;" ><%= @cd.name %></h1>
       <h3><strong><%= @cd.description %></strong></h3>
-      <h4><strong><%= @cd.category %></strong></h4>
-      <p><strong><%= @cd.price %></strong>€</p>
+      <h3><strong><%= @cd.category %></strong></h3>
+      <h4><strong><%= @cd.price %></strong>€</h4>
 
       <% if current_user.nil? || @cd.user_id != current_user.id %>
         <%= link_to "Rent", new_cd_booking_path(@cd), class: "btn btn-flat" %>
