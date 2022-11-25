@@ -18,6 +18,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     authorize @booking
     if @booking.save
+      flash[:notice] = "Your booking has been added."
       redirect_to bookings_path(@booking)
     else
       render :new, status: :unprocessable_entity
@@ -32,6 +33,7 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     @booking.update(booking_params)
+    flash[:notice] = "Your booking has been edited."
     redirect_to bookings_path
     authorize @booking
   end
@@ -39,6 +41,7 @@ class BookingsController < ApplicationController
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
+    flash[:notice] = "Your booking has been deleted."
     authorize @booking
     redirect_to bookings_path
   end

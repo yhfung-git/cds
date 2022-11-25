@@ -28,4 +28,5 @@ class ApplicationController < ActionController::Base
   def skip_pundit?
     devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
   end
+  add_flash_types :info, :error, :success
 end

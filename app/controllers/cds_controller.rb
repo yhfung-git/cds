@@ -27,6 +27,7 @@ class CdsController < ApplicationController
     @cd.user = current_user
     authorize @cd
     if @cd.save
+      flash[:notice] = "Your CD has been added."
       redirect_to cd_path(@cd)
     else
       render :new, status: :unprocessable_entity
@@ -39,12 +40,14 @@ class CdsController < ApplicationController
 
   def update
     @cd.update(cd_params)
+    flash[:notice] = "Your CD has been updated."
     authorize @cd
     redirect_to cd_path(@cd)
   end
 
   def destroy
     @cd.destroy
+    flash[:notice] = "Your CD has been deleted."
     authorize @cd
     redirect_to root_path
   end
