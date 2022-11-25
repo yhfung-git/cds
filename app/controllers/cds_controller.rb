@@ -4,7 +4,7 @@ class CdsController < ApplicationController
 
   def home
     if params[:query].present?
-      @cds = Cd.all
+      # @cds = Cd.all
       @cds = @cds.search_by_name_and_description(params[:query])
     else
       @cds = Cd.all
