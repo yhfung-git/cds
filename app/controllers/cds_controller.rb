@@ -48,7 +48,7 @@ class CdsController < ApplicationController
     @cd.destroy
     flash[:notice] = "Your CD has been deleted!"
     authorize @cd
-    redirect_to root_path
+    redirect_to cds_path
   end
 
   def show
