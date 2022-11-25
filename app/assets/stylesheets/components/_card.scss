@@ -8,7 +8,7 @@
   align-items: center;
   margin: 10px;
   width: 40%;
-  border-radius: 4px;
+  border-radius: 5px;
   margin-right: 20px;
 }
 
@@ -43,10 +43,11 @@
 }
 
 .card-category p {
-    position: absolute;
-    left: 50%;                        /* horizontal alignment */
-    top: 50%;                         /* vertical alignment */
-    transform: translate(-50%, -50%); /* precise centering; see link below */
+  overflow-wrap: break-word;
+  position: absolute;
+  left: 50%;                        /* horizontal alignment */
+  top: 50%;                         /* vertical alignment */
+  transform: translate(-50%, -50%); /* precise centering; see link below */
 }
 
 // Card Category
@@ -65,14 +66,16 @@
 }
 
 .card-category p {
-  width: 120px;
-  height: 120px;
+  width: 130px;
+  height: 130px;
+  font-size: 22px;
   border-radius: 50%;
   background-color: white;
   text-align: center;
   display: flex;
   justify-content: center;
   flex-direction: column;
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 
 .card-category:hover {
@@ -80,6 +83,7 @@
   opacity: 1;
 }
 
+// Border Spin
 .card-category:hover::before, .card-category:hover::after {
   display: block;
   content: '';
@@ -97,7 +101,6 @@
   animation: 3s counterclockwise infinite;
 }
 
-// border spinning
 @keyframes clockwise {
   0% {
     top: -5px;
@@ -176,7 +179,7 @@
   }
 }
 
-// spinning hover
+// Spin hover
 @keyframes spinning {
   from { transform: rotate(0deg) }
   to { transform: rotate(360deg) }
@@ -190,6 +193,7 @@
   animation-timing-function: linear;
 }
 
+// Spin normal
 .spin {
   animation-name: spinning;
   animation-duration: 4s;
