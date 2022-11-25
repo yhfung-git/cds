@@ -3,13 +3,11 @@ class CdsController < ApplicationController
   before_action :set_cd, only: %i[edit update destroy show]
 
   def home
-    #@cds = Cd.all
-    if params[:query]
+    if params[:query].present?
       @cds = Cd.all
       @cds = @cds.search_by_name_and_description(params[:query])
     else
       @cds = Cd.all
-      # @cds = Cd.all unless Cd @booking.cd = Cd.find(params[:cd_id])
     end
   end
 
