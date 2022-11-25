@@ -21,9 +21,10 @@
 
 .profile-avatar {
   justify-content: center;
-  height: 200px;
-  width: 200px;
+  height: 150px;
+  width: 150px;
   border-radius: 50%;
+  margin-top: 50px;
 }
 
 .profile-img {
@@ -33,4 +34,33 @@
 
 .profile {
   text-align: center;
+}
+
+.profile-detail h1{
+  font-family: 'Noto Sans', sans-serif;
+  text-align: center;
+
+  font-size: 40px;
+  text-transform: uppercase;
+}
+
+.profile-detail h2 {
+  font-family: 'Noto Sans', sans-serif;
+  text-align: center;
+
+  font-size: 30px;
+  text-transform: capitalize;
+}
+
+.profile-detail p {
+  font-family: 'Noto Sans', sans-serif;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.container-user-profile {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
