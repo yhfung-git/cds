@@ -1,36 +1,60 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<%# Banner %>
+<div class="user-edit-banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1615716175455-9a098e2388be?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGxpZ2h0JTIwZ3JlZW58ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60);" >
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
+  <%# Container %>
+  <div class="container">
+    <h1 style="text-transform:uppercase">Edit your profile</h1>
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
+    <%# Form %>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= f.error_notification %>
 
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-    <% end %>
+      <div class="form-inputs">
 
-    <%= f.input :password,
-                hint: "leave it blank if you don't want to change it",
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: false,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :photo, as: :file, required: false %>
-    <%= f.input :current_password,
-                hint: "we need your current password to confirm your changes",
-                required: true,
-                input_html: { autocomplete: "current-password" } %>
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+        <% end %>
+
+        <%= f.input :last_name,
+                    required: false,
+                    input_html: { autocomplete: "last-name" } %>
+        <%= f.input :first_name,
+                    required: false,
+                    input_html: { autocomplete: "first-name" } %>
+        <%= f.input :address,
+                    required: false,
+                    input_html: { autocomplete: "address" } %>
+        <%= f.input :phone_number,
+                    required: false,
+                    input_html: { autocomplete: "phone-number" },
+                    hint: "NUMBER ONLY" %>
+        <%= f.input :email, required: true, autofocus: true %>
+        <%= f.input :photo, as: :file, required: false %>
+        <%= f.input :password,
+                    hint: "LEAVE IT BLANK IF YOU DON'T WANT TO CHANGE IT",
+                    required: false,
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :password_confirmation,
+                    required: false,
+                    input_html: { autocomplete: "new-password" } %>
+        <%= f.input :current_password,
+                    hint: "ENTER YOUR CURRENT PASSWORD TO CONFIRM YOUR CHANGES",
+                    required: true,
+                    input_html: { autocomplete: "current-password" } %>
+
+        <div class="form-actions">
+          <%= f.button :submit, "Update profile", class:"btn btn-flat" %>
+          <%= link_to "Back to profile", user_path(current_user), class:"btn btn-flat" %>
+        </div>
+      <% end %>
+
+      <%# Cancel account %>
+      <%# <div class="cancel">
+        <h3>Cancel your account?</h3>
+
+        <p><%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure you want to cancel your account?" }, method: :delete, class:"btn btn-flat" </p>
+      </div> %>
+
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>
+</div>
