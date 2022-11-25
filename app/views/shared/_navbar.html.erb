@@ -22,7 +22,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
-          <span class="salut-user" style="text-transform:uppercase;"><%=current_user.first_name%></span>
+          <span class="salut-user" style="text-transform:uppercase;"><%= link_to current_user.first_name, user_path %></span>
           <li class="nav-item active">
             <%= link_to "", "#", class: "nav-link" %>
           </li>
