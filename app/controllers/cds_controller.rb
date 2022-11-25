@@ -3,9 +3,8 @@ class CdsController < ApplicationController
   before_action :set_cd, only: %i[edit update destroy show]
 
   def home
-    # @cds = Cd.all
+    @cds = Cd.all
     if params[:query].present?
-      @cds = Cd.all
       @cds = @cds.search_by_name_and_description(params[:query])
     else
       @cds = Cd.all
@@ -27,7 +26,7 @@ class CdsController < ApplicationController
     @cd.user = current_user
     authorize @cd
     if @cd.save
-      flash[:notice] = "Your CD has been added."
+      flash[:notice] = "Your CD has been added!"
       redirect_to cd_path(@cd)
     else
       render :new, status: :unprocessable_entity
@@ -40,14 +39,14 @@ class CdsController < ApplicationController
 
   def update
     @cd.update(cd_params)
-    flash[:notice] = "Your CD has been updated."
+    flash[:notice] = "Your CD has been updated!"
     authorize @cd
     redirect_to cd_path(@cd)
   end
 
   def destroy
     @cd.destroy
-    flash[:notice] = "Your CD has been deleted."
+    flash[:notice] = "Your CD has been deleted!"
     authorize @cd
     redirect_to root_path
   end
