@@ -1,11 +1,16 @@
-<div class="container">
+<%# Banner %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(https://images.unsplash.com/photo-1615716175455-9a098e2388be?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGxpZ2h0JTIwZ3JlZW58ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60);">
+  <h1 style="text-transform:uppercase;">Edit your CD</h1>
 
-  <%= simple_form_for [@cd, @booking] do |f| %>
-    <%= f.input :start_time, label: "Rent from" %>
-    <%= f.input :end_time, label: "Rent until" %>
-    <%= f.submit value: "Rent", class: "btn btn-flat" %>
-  <% end %>
+  <div class="d-flex justify-content-center">
 
-  <%# <%= @booking.cd.name %>
-  <%# <%= @booking.cd.photo.key %>
+    <%= simple_form_for [@cd, @booking] do |f| %>
+      <%= f.input :start_time, label: "Rent from" %>
+      <%= f.input :end_time, label: "Rent until" %>
+      <%= f.submit value: "Rent", class: "btn btn-flat" %>
+    <% end %>
+
+    <%# <%= @booking.cd.name %>
+    <%# <%= @booking.cd.photo.key %>
+  </div>
 </div>

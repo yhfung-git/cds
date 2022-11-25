@@ -3,7 +3,7 @@
   <h1 style="text-transform:uppercase;">Edit your CD</h1>
 
   <%# Form %>
-  <div class="container">
+  <div class="d-flex justify-content-center">
     <%= simple_form_for(@cd) do |f| %>
       <%= f.input :name, label: "CD title" %>
       <%= f.input :description %>
