@@ -4,7 +4,7 @@
       <h1 style="text-transform:uppercase;" ><%= @cd.name %></h1>
       <h3><strong><%= @cd.description %></strong></h3>
       <h3><strong><%= @cd.category %></strong></h3>
-      <h4><strong><%= @cd.price %></strong>€</h4>
+      <h4><strong><%= @cd.price %>€ / jour</strong></h4>
 
       <% if current_user.nil? || @cd.user_id != current_user.id %>
         <%= link_to "Rent", new_cd_booking_path(@cd), class: "btn btn-flat" %>
